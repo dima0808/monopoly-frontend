@@ -10,7 +10,7 @@ import {Client} from "@stomp/stompjs";
 import {useParams} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import {getAllAdditionalEffects, getProperties, getRoomByName} from "../../utils/http";
-import {IP} from "../../constraints";
+import {IP, PORT} from "../../constraints";
 
 import diceRollSound from "../../sounds/dice-rolling.mp3";
 const diceRollAudio = new Audio(diceRollSound);
@@ -193,7 +193,7 @@ export default function Game({setNotifications, setSelectedUser, setIsPrivateCha
     useEffect(() => {
         const token = Cookies.get('token');
         const client = new Client({
-            brokerURL: 'ws://' + IP + ':8080/ws',
+            brokerURL: 'ws://' + IP + PORT + '/ws',
             connectHeaders: {
                 Authorization: `Bearer ${token}`
             },
