@@ -17,7 +17,7 @@ import {Client} from "@stomp/stompjs";
 import {onErrorReceived, onNotificationReceived, removeNotification} from "./utils/notifications";
 import NotificationList from "./components/notification/NotificationList";
 import PrivateChatDialog from "./components/chat/private/PrivateChatDialog";
-import {IP, PORT} from "./constraints";
+import {IP, PORT, WS_PROTOCOL} from "./constraints";
 
 function AppRoutes({setNickname, setNotifications, setIsPrivateChatOpen, setSelectedUser}) {
     return (
@@ -55,7 +55,7 @@ export default function App() {
         const token = Cookies.get('token');
         const username = Cookies.get('username');
         const client = new Client({
-            brokerURL: 'ws://' + IP + PORT + '/ws',
+            brokerURL: WS_PROTOCOL + IP + PORT + '/ws',
             connectHeaders: {
                 Authorization: `Bearer ${token}`
             },

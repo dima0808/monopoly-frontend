@@ -155,7 +155,8 @@ import shoppingMallImg from "./images/building_neighborhood_build2_icon_shopping
 import wondersImg from "./images/wonders.png";
 import goldImg from "./images/icon-gold.png";
 
-export const PROTOCOL = "https://";
+export const HTTP_PROTOCOL = "https://";
+export const WS_PROTOCOL = "wss://";
 export const IP = "civ-monopoly-a9850da66a7d.herokuapp.com";
 // civ-monopoly-a9850da66a7d.herokuapp.com
 // 26.239.28.186
